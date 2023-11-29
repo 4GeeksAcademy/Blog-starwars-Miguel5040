@@ -1,0 +1,15 @@
+nav{
+    background-color: rgb(240, 238, 238);
+    margin-bottom: 30px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imagen-logo{
+    width: 100px;
+    height: auto;
+}
