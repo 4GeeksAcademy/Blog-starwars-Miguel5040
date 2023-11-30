@@ -1,0 +1,14 @@
+.contenedor-descripcion{
+    display: flex;
+    margin-bottom: 80px;
+}
+
+.imagen-descripcion{
+    margin-right: 40px;
+}
+
+.contenedor-propiedades{
+    display: flex;
+    justify-content: space-around;
+}
+

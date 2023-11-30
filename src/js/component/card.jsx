@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = (props) => {
 
@@ -8,7 +9,7 @@ const Card = (props) => {
 			<div className="card-body">
 				<h5 className="card-title">{props.nombre}</h5>
 				<div className="d-flex justify-content-between">
-					<a href="#" className="btn btn-outline-primary">Learn more!</a>
+					<Link to={`${props.type}/${props.id}`} className="btn btn-outline-primary">Learn more!</Link>
 					<button type="button" className="btn btn-outline-warning"><i className="bi bi-suit-heart"></i></button>
 				</div>
 			</div>

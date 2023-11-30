@@ -1,12 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 
 const Navbar = () => {
 	return (
 		<nav>
 			<header className="container">
-				<img className="imagen-logo" src="https://download.logo.wine/logo/Star_Wars/Star_Wars-Logo.wine.png" />
-
+				<Link to="/"><img className="imagen-logo" src="https://download.logo.wine/logo/Star_Wars/Star_Wars-Logo.wine.png" /></Link>
 				<div className="dropdown">
 					<button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Favorites

@@ -24,7 +24,7 @@ const Characters = () => {
         <div className="contenedor-cards">
             {
                 characters.map((value, index) => (
-                    <Card nombre={value.name} key={index} />
+                    <Card nombre={value.name} key={index} id={value.uid} type={"character"} />
                 ))
             }
         </div>

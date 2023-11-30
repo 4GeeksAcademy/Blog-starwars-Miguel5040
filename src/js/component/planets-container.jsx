@@ -23,7 +23,7 @@ const Planets = () => {
         <div className="contenedor-cards">
             {
                 planets.map((value, index) => (
-                    <Card nombre={value.name} key={index} />
+                    <Card nombre={value.name} key={index} id={value.uid} type={"planet"} />
                 ))
             }
         </div>
