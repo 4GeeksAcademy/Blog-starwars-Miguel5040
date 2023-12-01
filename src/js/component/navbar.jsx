@@ -17,8 +17,8 @@ const Navbar = () => {
 						<span className="favoritos-counter">{contexto.store.favoritos.length}</span>
 					</button>
 					<ul className="dropdown-menu">
-						{contexto.store.favoritos.map((value) => (
-							<li className="dropdown-item">
+						{contexto.store.favoritos.map((value, index) => (
+							<li className="dropdown-item" key={index}>
 								<span className="favoritos-name">{value}</span>
 								<i className="bi bi-trash-fill borrar-favorito" onClick={() => contexto.actions.deleteFavoritos(value)}></i>
 							</li>

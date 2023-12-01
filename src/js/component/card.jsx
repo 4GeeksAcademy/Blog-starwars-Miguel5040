@@ -24,7 +24,7 @@ const Card = (props) => {
 					<Link to={`${props.type}/${props.id}`} className="btn btn-outline-primary">Learn more!</Link>
 					<button type="button" className="btn btn-outline-warning" onClick={asignarFavoritos}>
 						{verificarFav ? (
-							<i class="bi bi-suit-heart-fill"></i>
+							<i className="bi bi-suit-heart-fill"></i>
 						) : (
 							<i className="bi bi-suit-heart"></i>
 						)}
