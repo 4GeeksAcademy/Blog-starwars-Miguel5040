@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
+import { Context } from "../store/appContext.js";
 
 const Navbar = () => {
+
+	const contexto = useContext(Context);
+
 	return (
 		<nav>
 			<header className="container">
 				<Link to="/"><img className="imagen-logo" src="https://download.logo.wine/logo/Star_Wars/Star_Wars-Logo.wine.png" /></Link>
 				<div className="dropdown">
 					<button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Favorites
+						<span>Favorites</span>
+						<span className="favoritos-counter">{contexto.store.favoritos.length}</span>
 					</button>
 					<ul className="dropdown-menu">
-						<li><a className="dropdown-item" href="#">Action</a></li>
-						<li><a className="dropdown-item" href="#">Another action</a></li>
-						<li><a className="dropdown-item" href="#">Something else here</a></li>
+						{contexto.store.favoritos.map((value) => (
+							<li className="dropdown-item">
+								<span className="favoritos-name">{value}</span>
+								<i className="bi bi-trash-fill borrar-favorito" onClick={() => contexto.actions.deleteFavoritos(value)}></i>
+							</li>
+						))}
 					</ul>
 				</div>
 			</header>

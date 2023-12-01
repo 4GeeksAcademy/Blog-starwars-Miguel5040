@@ -1,9 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Card from "./card.jsx";
-import Context from "../store/appContext.js";
+import { Context } from "../store/appContext.js";
 import "../../styles/cardContainer.css";
 
 const Characters = () => {
+
+    const contexto = useContext(Context);
 
     const [characters, setCharacters] = useState([]);
 

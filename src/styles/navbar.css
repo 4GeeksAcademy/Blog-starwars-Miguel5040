@@ -13,3 +13,21 @@ header{
     width: 100px;
     height: auto;
 }
+
+.dropdown-item{
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+    cursor: auto;   
+}
+
+.borrar-favorito{
+    cursor: pointer;
+}
+
+.favoritos-counter{
+    background-color: gray;
+    padding: 3px ;
+    margin: 0 6px;
+    border-radius: 3px;
+}

@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Card from "./card.jsx";
+import { Context } from "../store/appContext.js";
 import "../../styles/cardContainer.css";
 
 const Planets = () => {
+
+    const contexto = useContext(Context);
 
     const [planets, setPlanets] = useState([]);
 
