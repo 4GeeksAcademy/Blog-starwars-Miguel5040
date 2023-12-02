@@ -15,9 +15,18 @@ const Card = (props) => {
 		setVerificarFav(contexto.actions.verificarFavorito(props.nombre));
 	}, [contexto.store.favoritos])
 
+	// https://starwars-visualguide.com/assets/img/planets/2.jpg
+	// https://starwars-visualguide.com/assets/img/vehicles/6.jpg
+	// https://buntingmagnetics.com/wp-content/uploads/2015/04/400x300.gif
+
 	return (
 		<div className="card" style={{ width: "18rem" }}>
-			<img src="https://buntingmagnetics.com/wp-content/uploads/2015/04/400x300.gif" className="card-img-top" />
+			<img src={`https://starwars-visualguide.com/assets/img/${props.type}/${props.id}.jpg`}
+				className="card-img-top"
+				onError={(event) => {
+					event.target.src = 'https://buntingmagnetics.com/wp-content/uploads/2015/04/400x300.gif'
+				}}
+			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.nombre}</h5>
 				<div className="d-flex justify-content-between">

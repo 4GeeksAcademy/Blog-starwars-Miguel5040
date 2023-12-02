@@ -1,20 +1,20 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Card from "./card.jsx";
 import { Context } from "../store/appContext.js";
 import "../../styles/cardContainer.css";
 
-const Characters = () => {
+const Vehicles = () => {
 
     const contexto = useContext(Context);
 
-    const [characters, setCharacters] = useState([]);
+    const [vehicles, setVehicles] = useState([]);
 
     //Funcion para solicitar data de personajes a la API
     async function solicitarData() {
-        const response = await fetch("https://swapi.tech/api/people");
+        const response = await fetch("https://swapi.tech/api/vehicles");
         const data = await response.json();
         const results = data.results;
-        setCharacters(results);
+        setVehicles(results);
     }
 
 
@@ -25,12 +25,12 @@ const Characters = () => {
     return (
         <div className="contenedor-cards">
             {
-                characters.map((value, index) => (
-                    <Card nombre={value.name} key={index} id={value.uid} type={"characters"} />
+                vehicles.map((value, index) => (
+                    <Card nombre={value.name} key={index} id={value.uid} type={"vehicles"} />
                 ))
             }
         </div>
     )
 }
 
-export default Characters;
+export default Vehicles;

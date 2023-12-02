@@ -26,7 +26,7 @@ const CharacterDescription = () => {
     return (
         <div className="contenedor-principal-characters">
             <div className="container contenedor-descripcion">
-                <img className="imagen-descripcion" src="https://buntingmagnetics.com/wp-content/uploads/2015/04/400x300.gif" />
+                <img className="imagen-descripcion" src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} />
                 <div>
                     <h2>{propiedades.name}</h2>
                     <p>{descripcion}</p>

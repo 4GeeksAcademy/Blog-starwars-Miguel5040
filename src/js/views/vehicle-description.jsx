@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "../../styles/description.css";
 
-const CharacterDescription = () => {
+const VehicleDescription = () => {
 
     const [propiedades, setPropiedades] = useState({});
     const [descripcion, setDescripcion] = useState("");
@@ -10,12 +10,13 @@ const CharacterDescription = () => {
     const { id } = useParams();
 
     async function solicitarData() {
-        const respose = await fetch("https://swapi.tech/api/people/" + id);
+        const respose = await fetch("https://swapi.tech/api/vehicles/" + id);
         const data = await respose.json();
         const result = data.result.properties;
         const result2 = data.result.description;
         setPropiedades(result);
         setDescripcion(result2);
+        console.log(data.result)
     }
 
     useEffect(() => {
@@ -25,7 +26,7 @@ const CharacterDescription = () => {
     return (
         <div className="contenedor-principal-characters">
             <div className="container contenedor-descripcion">
-                <img className="imagen-descripcion" src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} />
+                <img className="imagen-descripcion" src={`https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg`} />
                 <div>
                     <h2>{propiedades.name}</h2>
                     <p>{descripcion}</p>
@@ -37,28 +38,28 @@ const CharacterDescription = () => {
                     <p>{propiedades.name}</p>
                 </div>
                 <div className="text">
-                    <p>Birth Year</p>
-                    <p>{propiedades.birth_year}</p>
+                    <p>Climate</p>
+                    <p>{propiedades.climate}</p>
                 </div>
                 <div className="text">
-                    <p>Gender</p>
-                    <p>{propiedades.gender}</p>
+                    <p>Population</p>
+                    <p>{propiedades.population}</p>
                 </div>
                 <div className="text">
-                    <p>Height</p>
-                    <p>{propiedades.height}</p>
+                    <p>Orbital Period</p>
+                    <p>{propiedades.orbital_period}</p>
                 </div>
                 <div className="text">
-                    <p>Skin Color</p>
-                    <p>{propiedades.skin_color}</p>
+                    <p>Rotation Period</p>
+                    <p>{propiedades.rotation_period}</p>
                 </div>
                 <div className="text">
-                    <p>Eye Color</p>
-                    <p>{propiedades.eye_color}</p>
+                    <p>Diameter</p>
+                    <p>{propiedades.diameter}</p>
                 </div>
             </div>
         </div>
     )
 }
 
-export default CharacterDescription;
+export default VehicleDescription;
